@@ -1,0 +1,35 @@
+{% extends "todo/base.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block body %}
+
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="card">
+                <div class="card-header">
+                    New Task
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title">Add a new task</h1>
+                    <form method="post" action="">
+                        {% csrf_token %}
+                        {{ form }}
+
+                        <div class="my-4">
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-floppy-o"></i> Save</button>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+            <a href="/" class="btn btn-warning my-3"><i class="fa fa-eye" aria-hidden="true"></i> View tasks</a>
+
+        </div>
+    </div>
+
+
+
+
+{% endblock %}
